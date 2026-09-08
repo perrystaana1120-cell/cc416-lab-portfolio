@@ -1,3 +1,53 @@
+import "./styles.css";
+
+const app = document.querySelector("#app");
+
+const steps = [
+  {
+    title: "Install Node.js",
+    detail: "Download the LTS version from nodejs.org. npm is installed together with Node.js."
+  },
+  {
+    title: "Open the Folder",
+    detail: "Extract the Google Drive ZIP file, then open lab_03.02_ON_YOUR_OWN in VS Code or PowerShell."
+  },
+  {
+    title: "Install Packages",
+    detail: "Run npm install once. This downloads Vite, Tailwind CSS, PostCSS, and Autoprefixer."
+  },
+  {
+    title: "Run and Submit",
+    detail: "Run npm run dev, open the local URL, then complete the GitHub branch and commit workflow."
+  }
+];
+
+const commands = [
+  "node -v",
+  "npm -v",
+  "npm install",
+  "npm run dev",
+  "npm run build"
+];
+
+const gitCommands = [
+  "git init",
+  "git status",
+  "git add lab_03.02_ON_YOUR_OWN",
+  'git commit -m "Add Lab 03.02 Vite and Tailwind static app"',
+  "git branch -M main",
+  "git remote add origin https://github.com/USERNAME/REPOSITORY.git",
+  "git push -u origin main"
+];
+
+const checklist = [
+  "Node.js LTS installed",
+  "npm version displays in the terminal",
+  "Project dependencies installed with npm install",
+  "Vite server runs with npm run dev",
+  "Production build passes with npm run build",
+  "GitHub repository contains the lab folder"
+];
+
 app.innerHTML = `
   <main class="min-h-screen">
     <section class="border-b border-zinc-200 bg-white">
@@ -5,7 +55,7 @@ app.innerHTML = `
         <div>
           <p class="text-sm font-semibold uppercase text-indigo-600">CC416 Application Development</p>
           <h1 class="mt-3 max-w-3xl text-4xl font-bold text-zinc-950 md:text-5xl">
-            Lab 03.02: My Customized App
+            Lab 03.02: Setup, Vite, Tailwind, and GitHub Workflow
           </h1>
           <p class="mt-2 text-base font-medium text-zinc-600">
             Submitted by: Perry Sta. Ana
@@ -107,6 +157,23 @@ git commit -m "Complete Lab 03.02"</code></pre>
         <div>
           <h2 class="text-2xl font-bold text-zinc-950">Merge</h2>
           <p class="mt-2 text-sm leading-6 text-zinc-600">Merge the branch into main after checking the app with npm run dev or npm run build.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-t border-zinc-200 bg-indigo-50">
+      <div class="mx-auto max-w-6xl px-6 py-10 lg:px-8">
+        <p class="text-sm font-semibold uppercase text-indigo-700">Key Takeaways</p>
+        <h2 class="mt-2 text-3xl font-bold text-zinc-950">Part 12 Feature Addition</h2>
+        <div class="mt-6 grid gap-4 md:grid-cols-2">
+          <div class="rounded-lg border border-indigo-200 bg-white p-5 shadow-sm">
+            <h3 class="font-bold text-indigo-900">Branching Strategy</h3>
+            <p class="mt-2 text-sm text-zinc-600">Isolated branches allow testing UI features cleanly without affecting the main deployment branch.</p>
+          </div>
+          <div class="rounded-lg border border-indigo-200 bg-white p-5 shadow-sm">
+            <h3 class="font-bold text-indigo-900">Modern Frontend Tooling</h3>
+            <p class="mt-2 text-sm text-zinc-600">Vite provides instant HMR while Tailwind CSS provides scalable utility-first layout styling.</p>
+          </div>
         </div>
       </div>
     </section>
