@@ -1,62 +1,15 @@
-import "./styles.css";
-
-const app = document.querySelector("#app");
-
-const steps = [
-  {
-    title: "Install Node.js",
-    detail: "Download the LTS version from nodejs.org. npm is installed together with Node.js."
-  },
-  {
-    title: "Open the Folder",
-    detail: "Extract the Google Drive ZIP file, then open lab_03.02_ON_YOUR_OWN in VS Code or PowerShell."
-  },
-  {
-    title: "Install Packages",
-    detail: "Run npm install once. This downloads Vite, Tailwind CSS, PostCSS, and Autoprefixer."
-  },
-  {
-    title: "Run and Submit",
-    detail: "Run npm run dev, open the local URL, then complete the GitHub branch and commit workflow."
-  }
-];
-
-const commands = [
-  "node -v",
-  "npm -v",
-  "npm install",
-  "npm run dev",
-  "npm run build"
-];
-
-const gitCommands = [
-  "git init",
-  "git status",
-  "git add lab_03.02_ON_YOUR_OWN",
-  'git commit -m \"Add Lab 03.02 Vite and Tailwind static app\"',
-  "git branch -M main",
-  "git remote add origin https://github.com/USERNAME/REPOSITORY.git",
-  "git push -u origin main"
-];
-
-const checklist = [
-  "Node.js LTS installed",
-  "npm version displays in the terminal",
-  "Project dependencies installed with npm install",
-  "Vite server runs with npm run dev",
-  "Production build passes with npm run build",
-  "GitHub repository contains the lab folder"
-];
-
 app.innerHTML = `
   <main class="min-h-screen">
     <section class="border-b border-zinc-200 bg-white">
       <div class="mx-auto grid max-w-6xl gap-8 px-6 py-10 md:grid-cols-[1.2fr_0.8fr] md:items-center lg:px-8">
         <div>
-          <p class="text-sm font-semibold uppercase text-teal-700">CC416 Application Development</p>
+          <p class="text-sm font-semibold uppercase text-indigo-600">CC416 Application Development</p>
           <h1 class="mt-3 max-w-3xl text-4xl font-bold text-zinc-950 md:text-5xl">
-            Lab 03.02: Setup, Vite, Tailwind, and GitHub Workflow
+            Lab 03.02: My Customized App
           </h1>
+          <p class="mt-2 text-base font-medium text-zinc-600">
+            Submitted by: Perry Sta. Ana
+          </p>
           <p class="mt-5 max-w-2xl text-base leading-7 text-zinc-700">
             A static professional-style web app for practicing first-time project setup, modern frontend tooling,
             folder-based Git commits, branches, pushes, and merges.
