@@ -1,0 +1,456 @@
+# Lab 03.02 Tutorial: GitHub, Git Commit, Branch, Push, and Merge
+
+## Objectives
+
+After this activity, students should be able to:
+
+1. Create a GitHub account.
+2. Create a GitHub repository.
+3. Run a Vite and Tailwind CSS static web app.
+4. Select and commit only a specific folder in a larger project.
+5. Push commits to GitHub.
+6. Create a branch for each iteration.
+7. Merge a branch back into `main`.
+
+## Part 1: Create a GitHub Account
+
+1. Open your browser.
+2. Go to `https://github.com`.
+3. Click `Sign up`.
+4. Enter your email address.
+5. Create a password.
+6. Choose a username.
+7. Verify your email address using the code or link sent by GitHub.
+8. After logging in, open your GitHub dashboard.
+
+Use a professional username if possible. Avoid usernames that are hard to read or inappropriate for school and work.
+
+## Part 2: Create a Folder for Your GitHub Projects
+
+Create one main folder where you will store school repositories.
+
+Example folder:
+
+
+C:\Users\YourName\Documents\GitHub
+
+
+Inside that folder, you may store projects like:
+
+
+cc416-lab-portfolio
+student-management-system
+vite-tailwind-practice
+
+
+For this lab, the project folder is:
+
+
+lab_03.02_ON_YOUR_OWN
+
+
+## Part 3: Install Git
+
+1. Go to `https://git-scm.com`.
+2. Download Git for Windows.
+3. Run the installer.
+4. Keep the default options unless your instructor gives different settings.
+5. Open PowerShell or Git Bash.
+6. Check if Git is installed:
+
+
+git --version
+
+
+If Git is installed correctly, the terminal will show the installed version.
+
+## Part 4: Configure Git for the First Time
+
+Run these commands one time only on your computer:
+
+
+git config --global user.name "Your Full Name"
+git config --global user.email "your-email@example.com"
+
+
+Check your settings:
+
+
+git config --global --list
+
+
+Use the same email address you used for GitHub when possible.
+
+## Part 5: Run the Vite and Tailwind CSS App
+
+Open a terminal in this folder:
+
+
+lab_03.02_ON_YOUR_OWN
+
+
+Install the dependencies:
+
+
+npm install
+
+
+Start the development server:
+
+
+npm run dev
+
+
+Open the local URL shown in the terminal, usually:
+
+
+http://127.0.0.1:5173
+
+
+To stop the server, press `Ctrl + C` in the terminal.
+
+## Part 6: Create a GitHub Repository
+
+1. Log in to GitHub.
+2. Click the `+` button.
+3. Click `New repository`.
+4. Repository name example:
+
+
+cc416-lab-portfolio
+
+
+5. Choose `Public` or `Private`, depending on your instructor's instruction.
+6. Do not add a README if your local project already has files.
+7. Click `Create repository`.
+8. Copy the repository URL.
+
+Example HTTPS URL:
+
+
+https://github.com/USERNAME/cc416-lab-portfolio.git
+
+
+## Part 7: Initialize Git in the Class Project Folder
+
+There are two possible setups.
+
+Setup A: Your instructor gave you the full `lab_chap_2` folder.
+
+If your chapter folder is not yet a Git repository, open the terminal in the larger project folder:
+
+
+lab_chap_2
+
+
+Then run:
+
+
+git init
+
+
+Check the current status:
+
+
+git status
+
+
+This shows which files are untracked, modified, or ready to commit.
+
+Setup B: Your instructor gave you only the `lab_03.02_ON_YOUR_OWN` folder through Google Drive.
+
+Open the terminal inside:
+
+
+lab_03.02_ON_YOUR_OWN
+
+
+Then run:
+
+
+git init
+git status
+
+
+## Part 8: Select and Commit Only One Specific Folder
+
+This is important when your project contains many lab folders.
+
+If you are inside the larger `lab_chap_2` folder, stage only this lab folder:
+
+
+git add lab_03.02_ON_YOUR_OWN
+
+
+If you are inside the downloaded `lab_03.02_ON_YOUR_OWN` folder itself, stage the current project files:
+
+
+git add .
+
+
+Check what is staged:
+
+
+git status
+
+
+Commit the selected folder:
+
+
+git commit -m "Add Lab 03.02 Vite and Tailwind app"
+
+
+This commit includes only the files inside `lab_03.02_ON_YOUR_OWN`.
+
+Avoid this command when you are inside the larger `lab_chap_2` folder and only want to submit one lab folder:
+
+
+git add .
+
+
+`git add .` stages everything in the current folder, including unrelated files.
+
+## Part 9: Connect the Local Project to GitHub
+
+Rename the default branch to `main`:
+
+
+git branch -M main
+
+
+Connect your local repository to GitHub:
+
+
+git remote add origin https://github.com/USERNAME/cc416-lab-portfolio.git
+
+
+Check the remote:
+
+
+git remote -v
+
+
+Push the first commit:
+
+
+git push -u origin main
+
+
+Refresh your GitHub repository page. Your files should now appear online.
+
+## Part 10: Make Iteration 1 Using a Branch
+
+A branch lets you work on an improvement without changing `main` immediately.
+
+Create a new branch:
+
+
+git checkout -b improve-homepage
+
+
+Edit the app. Suggested changes:
+
+1. Change the main heading.
+2. Add your full name and section.
+3. Change one color or spacing utility in Tailwind.
+
+Check the changes:
+
+
+git status
+
+
+Stage only this lab folder:
+
+If you are inside `lab_chap_2`:
+
+
+git add lab_03.02_ON_YOUR_OWN
+
+
+If you are inside `lab_03.02_ON_YOUR_OWN`:
+
+
+git add .
+
+
+Commit the iteration:
+
+
+git commit -m "Improve Lab 03.02 homepage"
+
+
+Push the branch:
+
+
+git push -u origin improve-homepage
+
+
+## Part 11: Merge the Branch Into Main Locally
+
+Go back to the main branch:
+
+
+git checkout main
+
+
+Make sure `main` is updated:
+
+
+git pull origin main
+
+
+Merge the branch:
+
+
+git merge improve-homepage
+
+
+Push the updated `main` branch:
+
+
+git push origin main
+
+
+Your improvement is now part of the main project history.
+
+## Part 12: Make Iteration 2 Using Another Branch
+
+Create another branch:
+
+
+git checkout -b add-workflow-section
+
+
+Suggested changes:
+
+1. Add another card to the page.
+2. Add a short Git command list.
+3. Improve the mobile layout.
+
+Run the project before committing:
+
+
+npm run dev
+
+
+Build the project to check for errors:
+
+
+npm run build
+
+
+Stage only the selected folder:
+
+If you are inside `lab_chap_2`:
+
+
+git add lab_03.02_ON_YOUR_OWN
+
+
+If you are inside `lab_03.02_ON_YOUR_OWN`:
+
+
+git add .
+
+
+Commit:
+
+
+git commit -m "Add workflow section to Lab 03.02"
+
+
+Push the branch:
+
+
+git push -u origin add-workflow-section
+
+
+Merge into main:
+
+
+git checkout main
+git pull origin main
+git merge add-workflow-section
+git push origin main
+
+
+## Part 13: Optional GitHub Pull Request Workflow
+
+Professionals often merge using pull requests.
+
+1. Push your branch to GitHub.
+2. Open your GitHub repository.
+3. Click `Compare & pull request`.
+4. Write a short title and description.
+5. Review the changed files.
+6. Click `Create pull request`.
+7. Click `Merge pull request`.
+8. Click `Confirm merge`.
+9. Go back to your local terminal.
+10. Run:
+
+
+git checkout main
+git pull origin main
+
+
+## Part 14: Common Problems and Fixes
+
+Problem: `git is not recognized`
+
+Fix: Install Git, then reopen PowerShell.
+
+Problem: `origin already exists`
+
+Fix: Check the current remote:
+
+
+git remote -v
+
+
+Change it if needed:
+
+
+git remote set-url origin https://github.com/USERNAME/cc416-lab-portfolio.git
+
+
+Problem: `nothing to commit`
+
+Fix: You may not have saved the file, or the changes are already committed. Run:
+
+
+git status
+
+
+Problem: You accidentally staged many files
+
+Fix: Unstage them:
+
+
+git restore --staged .
+
+
+Then stage only the lab folder:
+
+
+git add lab_03.02_ON_YOUR_OWN
+
+
+## Required Submission
+
+Submit:
+
+1. Screenshot of the running Vite app in the browser.
+2. Screenshot of the GitHub repository showing the uploaded folder.
+3. Screenshot of at least one branch pushed to GitHub.
+4. The final GitHub repository link.
+
+## Instructor Check
+
+The repository should show:
+
+1. `lab_03.02_ON_YOUR_OWN`
+2. At least two commits.
+3. At least one feature branch or merged pull request.
+4. A working Vite and Tailwind CSS project.

@@ -1,0 +1,332 @@
+# Lab 03.02 Setup Tutorial: Node.js, npm, Vite, and Tailwind CSS
+
+## Purpose
+
+This tutorial explains how to prepare your computer before running the `lab_03.02_ON_YOUR_OWN` project.
+
+Your instructor may share this folder using a Google Drive link. After downloading it, you must install the required tools before the project can run.
+
+## What You Need
+
+Install these tools:
+
+1. Node.js LTS
+2. npm
+3. Visual Studio Code
+4. Git
+
+Important: npm is included when you install Node.js. You do not need a separate npm installer.
+
+Vite, Tailwind CSS, PostCSS, and Autoprefixer are already listed in `package.json`. They will be installed automatically when you run:
+
+
+npm install
+
+
+## Part 1: Download the Project from Google Drive
+
+1. Open the Google Drive link from your instructor.
+2. Download the project folder or ZIP file.
+3. If it downloads as a ZIP file, right-click it and choose `Extract All`.
+4. Move the extracted folder to a simple location, for example:
+
+
+C:\Users\YourName\Documents\CC416
+
+
+5. Make sure you can see this folder:
+
+
+lab_03.02_ON_YOUR_OWN
+
+
+Avoid running the project directly from inside the ZIP file. Extract it first.
+
+## Part 2: Install Node.js and npm
+
+1. Open your browser.
+2. Go to:
+
+
+https://nodejs.org
+
+
+3. Download the `LTS` version.
+4. Run the installer.
+5. Keep the default installer settings.
+6. Finish the installation.
+7. Close and reopen PowerShell or VS Code after installing.
+
+Check if Node.js is installed:
+
+
+node -v
+
+
+Check if npm is installed:
+
+
+npm -v
+
+
+If both commands show version numbers, Node.js and npm are working.
+
+Example output:
+
+
+v22.18.0
+10.9.3
+
+
+Your version numbers may be different. That is okay.
+
+## Part 3: Install Visual Studio Code
+
+1. Go to:
+
+
+https://code.visualstudio.com
+
+
+2. Download Visual Studio Code for Windows.
+3. Run the installer.
+4. Open VS Code after installation.
+
+Recommended VS Code extensions:
+
+1. Tailwind CSS IntelliSense
+2. Prettier - Code formatter
+3. GitLens
+
+These extensions are helpful but not required to run the project.
+
+## Part 4: Install Git
+
+1. Go to:
+
+
+https://git-scm.com
+
+
+2. Download Git for Windows.
+3. Run the installer.
+4. Keep the default settings unless your instructor gives different instructions.
+5. Close and reopen PowerShell or VS Code.
+
+Check if Git is installed:
+
+
+git --version
+
+
+If the command shows a version number, Git is working.
+
+## Part 5: Open the Project Folder in VS Code
+
+1. Open Visual Studio Code.
+2. Click `File`.
+3. Click `Open Folder`.
+4. Select:
+
+
+lab_03.02_ON_YOUR_OWN
+
+
+5. Click `Select Folder`.
+
+Open the terminal in VS Code:
+
+1. Click `Terminal`.
+2. Click `New Terminal`.
+
+The terminal should open inside the project folder.
+
+You can check the current folder by running:
+
+
+pwd
+
+
+## Part 6: Install the Project Dependencies
+
+Inside the `lab_03.02_ON_YOUR_OWN` folder, run:
+
+
+npm install
+
+
+This command reads `package.json` and installs the required packages:
+
+1. Vite
+2. Tailwind CSS
+3. PostCSS
+4. Autoprefixer
+
+After the command finishes, a `node_modules` folder will appear.
+
+Important: `node_modules` can be large. It is normal. Do not edit files inside `node_modules`.
+
+## Part 7: Run the Vite Development Server
+
+Start the project:
+
+
+npm run dev
+
+
+The terminal will show a local address, usually:
+
+
+http://127.0.0.1:5173
+
+
+Open that address in your browser.
+
+If the page appears, the project is running correctly.
+
+To stop the server, go back to the terminal and press:
+
+
+Ctrl + C
+
+
+If the terminal asks `Terminate batch job?`, type:
+
+
+Y
+
+
+Then press `Enter`.
+
+## Part 8: Build the Project
+
+Before submitting, check if the project can build:
+
+
+npm run build
+
+
+If the build succeeds, Vite will generate production files in the `dist` folder.
+
+## Part 9: Important Notes About Vite
+
+You do not need to install Vite globally.
+
+Do not run this command unless your instructor specifically asks for it:
+
+
+npm install -g vite
+
+
+This project already has Vite listed in `package.json`, so this is enough:
+
+
+npm install
+
+
+Then run:
+
+
+npm run dev
+
+
+## Part 10: Common Problems and Fixes
+
+Problem: `node is not recognized`
+
+Fix:
+
+Install Node.js LTS from `https://nodejs.org`, then close and reopen PowerShell or VS Code.
+
+Problem: `npm is not recognized`
+
+Fix:
+
+Install Node.js LTS again. npm comes with Node.js. Reopen your terminal after installation.
+
+Problem: `npm install` shows many warnings
+
+Fix:
+
+Warnings are not always errors. If the command still finishes and returns to the prompt, continue with:
+
+
+npm run dev
+
+
+Problem: `npm run dev` does not work because packages are missing
+
+Fix:
+
+Run:
+
+
+npm install
+
+
+Then run:
+
+
+npm run dev
+
+
+Problem: PowerShell says scripts are disabled
+
+Fix:
+
+Use Command Prompt instead of PowerShell, or ask your instructor for help changing the PowerShell execution policy.
+
+You may also try running commands in the VS Code terminal after selecting `Command Prompt` as the terminal profile.
+
+Problem: Port `5173` is already in use
+
+Fix:
+
+Stop the other running Vite server with `Ctrl + C`, then run:
+
+
+npm run dev
+
+
+If Vite chooses another port, open the new URL shown in the terminal.
+
+## Part 11: Files You Should Know
+
+Main files:
+
+1. `index.html`
+2. `src/main.js`
+3. `src/styles.css`
+4. `package.json`
+5. `tailwind.config.js`
+6. `postcss.config.js`
+
+Generated or installed folders:
+
+1. `node_modules` - installed packages from npm
+2. `dist` - production build output from Vite
+
+You usually edit files inside `src`.
+
+## Part 12: Quick Command Summary
+
+Run these commands inside the project folder:
+
+
+node -v
+npm -v
+npm install
+npm run dev
+npm run build
+
+
+## Part 13: Student Submission Checklist
+
+Before submitting, make sure:
+
+1. Node.js and npm are installed.
+2. `npm install` completed successfully.
+3. `npm run dev` opens the app in the browser.
+4. `npm run build` finishes without errors.
+5. You have screenshots required by your instructor.
+6. Your GitHub repository link is ready if GitHub submission is required.
