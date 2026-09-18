@@ -1,5 +1,8 @@
 import { Pool } from 'pg';
 
+// Bypass Node's strict SSL certificate chain validation for serverless environments
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: {
